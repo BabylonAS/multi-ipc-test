@@ -1,0 +1,24 @@
+[package]
+name = "multi_ipc_test"
+version = "0.1.0"
+description = "A pair of test IPC programs using ipc-channel crate"
+authors = ["BabylonAS <BabylonAS@yandex.ru>"]
+include = ["Cargo.toml", "README.md", "LICENSE", "src/*.rs"]
+license = "Unlicense"
+edition = "2018"
+
+[[bin]]
+name = "server"
+path = "src/main.rs"
+
+[[bin]]
+name = "client"
+path = "src/client.rs"
+
+[lib]
+name = "packet"
+path = "src/packet.rs"
+
+[dependencies]
+serde = {version = "1.0.94", features = ["derive"]}
+ipc-channel = "0.12.0"
